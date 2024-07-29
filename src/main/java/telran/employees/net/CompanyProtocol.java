@@ -37,18 +37,15 @@ public class CompanyProtocol implements Protocol {
 	}
 
 	private Response wrongDataResponse(String message) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Response(ResponseCode.WRONG_REQUEST_DATA, message);
 	}
 
 	private Response wrongTypeResponse(String requestType) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Response(ResponseCode.WRONG_REQUEST_TYPE, requestType);
 	}
 
 	private Response getManagersWithMostFactor(String requestData) {
 		Manager[] managers = company.getManagersWithMostFactor();
-		
 		return new Response(ResponseCode.OK, managersToJSON(managers));
 	}
 
@@ -60,23 +57,26 @@ public class CompanyProtocol implements Protocol {
 	}
 
 	private Response getDepartments(String requestData) {
-		// TODO Auto-generated method stub
-		return null;
+		String[] departments = company.getDepartments();
+		return new Response(ResponseCode.OK, String.join(";", departments));
 	}
 
-	private Response getDepartmentBudget(String requestData) {
-		// TODO Auto-generated method stub
-		return null;
+	private Response getDepartmentBudget(String department) {
+		int budget = company.getDepartmentBudget(department);
+		return new Response(ResponseCode.OK, "" + budget);
 	}
 
 	private Response removeEmployee(String requestData) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee empl = company.removeEmployee(Integer.parseInt(requestData));
+		return new Response(ResponseCode.OK, empl.getJSON());
 	}
 
 	private Response getEmployee(String requestData) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee empl = company.getEmployee(Integer.parseInt(requestData));
+		if (empl == null) {
+			throw new RuntimeException("Employee doesn't exist");
+		}
+		return new Response(ResponseCode.OK, empl.getJSON());
 	}
 
 	private Response addEmployee(String emplJSON) {
