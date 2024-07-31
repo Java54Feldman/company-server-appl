@@ -3,8 +3,8 @@
 {"basicSalary":13000,"className":"telran.employees.Manager","id":1006,"department":"QA","factor":3}
 {"hours":100,"basicSalary":10000,"className":"telran.employees.WageEmployee","id":1008,"department":"QA","wage":100}
 {"hours":100,"basicSalary":13000,"className":"telran.employees.WageEmployee","id":1009,"department":"Development","wage":100}
-{"hours":100,"basicSalary":7000,"className":"telran.employees.SalesPerson","id":1010,"department":"Audit","percent":0.5,"sales":100000,"wage":100}
 {"hours":100,"basicSalary":15000,"className":"telran.employees.WageEmployee","id":1011,"department":"Development","wage":100}
 {"hours":100,"basicSalary":10000,"className":"telran.employees.SalesPerson","id":1012,"department":"QA","percent":0.5,"sales":10000,"wage":100}
 {"basicSalary":20000,"className":"telran.employees.Manager","id":1015,"department":"Development","factor":1.5}
+{"hours":99,"basicSalary":10000,"className":"telran.employees.SalesPerson","id":1222,"department":"Development","percent":1.9,"sales":100000,"wage":120}
 {"basicSalary":8500,"className":"telran.employees.Manager","id":2000,"department":"QA","factor":1.7}
