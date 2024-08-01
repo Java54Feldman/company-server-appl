@@ -45,11 +45,8 @@ public class CompanyServerAppl {
 					running = false;
 					tcpServer.shutdown();
 					if (persistable != null) {
-						try {
 							persistable.save(FILE_NAME);
-						} catch (Exception e) {
-
-						}
+						
 					}
 				}
 			}
