@@ -44,6 +44,11 @@ public class CompanyServerAppl {
 				if (line != null && line.equals(SHUTDOWN)) {
 					running = false;
 					tcpServer.shutdown();
+					try {
+					    serverThread.join(SESSION_IDLE_TIMEOUT);
+					} catch (InterruptedException e) {
+					    // no interrupts
+					}
 					if (persistable != null) {
 							persistable.save(FILE_NAME);
 						
